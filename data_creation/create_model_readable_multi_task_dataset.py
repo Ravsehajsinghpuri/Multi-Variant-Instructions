@@ -19,7 +19,7 @@ percentage_instances_to_sample = int(args.percentage_instances_to_sample)
 dataset_type = args.dataset_type
 path_to_data_dir = args.path_to_data_dir
 
-tasks_metadata_file = open(path_to_data_dir + "/final_dataset/metadata.json")
+tasks_metadata_file = open(path_to_data_dir + "/mvi_dataset/metadata.json")
 tasks_metadata = json.load(tasks_metadata_file)
 tasks_metadata_file.close()
 
@@ -56,7 +56,7 @@ train_header, dev_header, test_header = True, True, True
 for task_id in task_ids:
 	task_data = tasks_metadata[task_id]
 	original_task = task_data["original_task"]
-	original_task_file = open(path_to_data_dir + "/final_dataset/" + original_task)
+	original_task_file = open(path_to_data_dir + "/mvi_dataset/" + original_task)
 	original_task_dict = json.load(original_task_file)
 	original_task_file.close()
 	if dataset_type == 'variants':
@@ -68,7 +68,7 @@ for task_id in task_ids:
 	
 	split_metadata = create_train_test_dev_splits(original_task_dict, percentage_instances_to_sample)
 	for task in combined_tasks:
-		task_file = open(path_to_data_dir + "/final_dataset/" + task)
+		task_file = open(path_to_data_dir + "/mvi_dataset/" + task)
 		task_dict = json.load(task_file)
 		task_file.close()
 		prefix_string = ""

@@ -21,7 +21,7 @@ dataset_type = args.dataset_type
 percentage_tasks_to_sample = int(args.percentage_tasks_to_sample)
 path_to_data_dir = args.path_to_data_dir
 
-tasks_metadata_file = open(path_to_data_dir + "/final_dataset/metadata.json")
+tasks_metadata_file = open(path_to_data_dir + "/mvi_dataset/metadata.json")
 tasks_metadata = json.load(tasks_metadata_file)
 tasks_metadata_file.close()
 
@@ -50,7 +50,7 @@ for task_id in combined_task_ids:
 		combined_tasks.append(original_task)
 	else:
 		combined_tasks = [original_task]
-	original_task_file = open(path_to_data_dir + "/final_dataset/" + original_task)
+	original_task_file = open(path_to_data_dir + "/mvi_dataset/" + original_task)
 	original_task_dict = json.load(original_task_file)
 	original_task_file.close()
 	
@@ -60,7 +60,7 @@ for task_id in combined_task_ids:
 		instances = random.Random(experiment_id).sample(instances,int(len(instances)*(percentage_instances_to_sample/100)))
 	
 	for task in combined_tasks:
-		task_file = open(path_to_data_dir + "/final_dataset/" + task)
+		task_file = open(path_to_data_dir + "/mvi_dataset/" + task)
 		task_dict = json.load(task_file)
 		task_file.close()
 		prefix_string = ""
