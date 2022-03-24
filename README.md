@@ -1,5 +1,4 @@
 # Multi-Variant-Instructions
-*Under Construction*
 
 This repository is an implementation of the paper [How Many Data Samples is an Additional Instruction Worth?](https://arxiv.org/pdf/2203.09161.pdf)
 We release our dataset of Multi-Variant Instructions and the code associated with all the experiments we have performed to analyse our dataset and our approach(Multi-Variant Instruction Learning) on this dataset. The dataset is available [here.](https://drive.google.com/drive/folders/1jDmfU7nuTXOLEXXsr27zFmLBM-qp8gQT?usp=sharing)
