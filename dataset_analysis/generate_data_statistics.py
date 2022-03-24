@@ -7,7 +7,8 @@ from rouge_score import rouge_scorer
 import pylev 
 import math
 
-tasks_metadata_file = open("mvi_dataset/metadata.json")
+path_to_dataset = "mvi_dataset/"
+tasks_metadata_file = open(path_to_dataset + "metadata.json")
 tasks_metadata = json.load(tasks_metadata_file)
 tasks_metadata_file.close()
 
