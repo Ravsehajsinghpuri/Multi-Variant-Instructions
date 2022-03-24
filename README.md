@@ -4,9 +4,15 @@ This repository is an implementation of the paper [How Many Data Samples is an A
 We release our dataset of Multi-Variant Instructions and the code associated with all the experiments we have performed to analyse our dataset and our approach(Multi-Variant Instruction Learning) on this dataset. The dataset is available [here.](https://drive.google.com/drive/folders/1jDmfU7nuTXOLEXXsr27zFmLBM-qp8gQT?usp=sharing)
 
 Broadly, we have performed our experiments in three settings: single-task, multi-task and cross-task. This repository is structured in a similar way to accomodate these three settings.
+
+## Setting up the Environment
+
+You should create a virtual environment named **nlpmiv** and use the `requirements.txt` to install all the packages and dependencies required to run the experiments.
+
 ## Dataset Analysis
 Download the dataset and run the script to generate all the statistics for our dataset. The script is available at `dataset_analysis/generate_data_statistics.py`
-Provide the appropriate path to the dataset in the script
+Provide the appropriate path to the dataset in the script.
+
 ## Single-Task Experiments
 ### Data Creation
 
