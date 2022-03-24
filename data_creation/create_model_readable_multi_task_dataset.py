@@ -18,7 +18,11 @@ experiment_id = int(args.experiment_id)
 percentage_instances_to_sample = int(args.percentage_instances_to_sample)
 dataset_type = args.dataset_type
 path_to_data_dir = args.path_to_data_dir
-
+"""
+list of task ids to use in this experiment, you can add a single task id for single-task seting
+ or multiple task ids for multi-task setting
+"""
+task_ids = ['task058']
 tasks_metadata_file = open(path_to_data_dir + "/mvi_dataset/metadata.json")
 tasks_metadata = json.load(tasks_metadata_file)
 tasks_metadata_file.close()
@@ -46,11 +50,7 @@ def create_train_test_dev_splits(task, percentage_instances_to_sample):
 if not os.path.isdir(path_to_data_dir + "/experiment_{}".format(experiment_id)):
 	os.mkdir(path_to_data_dir + "/experiment_{}".format(experiment_id))
 os.mkdir(path_to_data_dir + "/experiment_{}/model_dataset_{}_{}%_instances".format(experiment_id,dataset_type,percentage_instances_to_sample))
-"""
-list of task ids to use in this experiment, you can add a single task id for single-task seting
- or multiple task ids for multi-task setting
-"""
-task_ids = ['task058']
+
 train_header, dev_header, test_header = True, True, True
 
 for task_id in task_ids:
